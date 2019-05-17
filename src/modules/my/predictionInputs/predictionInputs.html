@@ -1,0 +1,31 @@
+<template>
+    <div class="panel panel-default">
+        <div class="panel-heading">Hypothetical Inputs</div>
+        <div class="panel-body row">
+            <div class="well col-md-6">
+                <label for="">Trade Show Invite</label>
+                <input type="checkbox" onchange={updateTSI}/>
+                
+                <label for="">Product</label>
+                <select class="form-control" onchange={productChange}>
+                    <template for:each={products} for:item="item">
+                        <option key={item.value}>{item.label}</option>
+                    </template>
+                </select>
+
+                <label for="">Promo</label>
+                <select class="form-control" onchange={promoChange}>
+                    <template for:each={promos} for:item="item">
+                        <option key={item.value}>{item.label}</option>
+                    </template>
+                </select>
+
+            </div>
+            <div class="col-md-6">
+                <template if:true={predictionTotal}>
+                    <h1>{predictionTotal}</h1>
+                </template>
+            </div>
+        </div>
+    </div>            
+</template>

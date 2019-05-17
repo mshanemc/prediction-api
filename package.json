@@ -1,0 +1,58 @@
+{
+  "name": "prediction-api",
+  "description": "prediction build api reference apps for lwc",
+  "version": "0.0.0",
+  "author": "mshanemc @mshanemc",
+  "bugs": "https://github.com/mshanemc/prediction-api/issues",
+  "dependencies": {
+    "@muenzpraeger/lwc-cli-services": "^0.1",
+    "@salesforce-ux/design-system": "^2.9.2"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "nodemon": "^1.19.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "homepage": "https://github.com/mshanemc/prediction-api",
+  "husky": {
+    "hooks": {
+      "pre-push": "lint-staged"
+    }
+  },
+  "keywords": [
+    "lwc"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "**/*.{html,js,json,yaml,yml,md}": [
+      "prettier --write"
+    ],
+    "**/modules/**": [
+      "eslint"
+    ],
+    "*": [
+      "git add"
+    ]
+  },
+  "repository": "mshanemc/prediction-api",
+  "scripts": {
+    "lint": "eslint ./src/**/*.js",
+    "prettier": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
+    "serve": "lwc-cli-services build && lwc-cli-services serve",
+    "test:unit": "lwc-cli-services test",
+    "test:unit:coverage": "lwc-cli-services test --coverage",
+    "test:unit:debug": "lwc-cli-services test --debug",
+    "test:unit:watch": "lwc-cli-services test --watch",
+    "watch": "lwc-cli-services watch",
+    "watch:full": "lwc-cli-services build && cp -R src/resources dist/ && lwc-cli-services serve"
+  },
+  "nodemonConfig": {
+    "watch": ["src"],
+    "exec": "npm run watch:full",
+    "ext": "cls,xml,json,js,trigger,cpm,css,design,svg,html",
+    "delay": "1500"
+  }
+}

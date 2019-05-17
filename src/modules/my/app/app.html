@@ -1,0 +1,85 @@
+<template>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">HomeGrown CRM-Like System</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"> Home </a></li>
+                    <li class="active"><a href="#"> Leads <span class="sr-only">(current)</span>  </a></li>
+                    <li><a href="#"> Business Partners </a></li>
+                    <li><a href="#"> Ship Tos </a></li>
+                    <li><a href="#"> Problem Tickets </a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+
+    <div class="main-content" style="margin-top: 70px;">
+
+        <div class="jumbotron">
+            Built by <a href="#">Enterprise IT</a> with <a href="#">serious developer tools</a> approved by <a href="#">professional architects</a>.  Coming soon in 2006: IBM PS/2 mouse support!
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">                    
+
+                    <div class="panel">
+                        <div class="panel-heading"> Currently Selected Lead </div>
+                        <div class="panel-body">
+                            <form action="" class="well">
+                                <div class="form-group">
+                                    <label for="">First_Name</label>
+                                    <input type="text" disabled class="form-control" value="Ada"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Last_Name</label>
+                                    <input type="text" disabled class="form-control" value="Ramirez"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Industry</label>
+                                    <input type="text" disabled class="form-control" value="Consulting"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Rating</label>
+                                    <input type="text" disabled class="form-control" value="Cold"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Annual_Revenue</label>
+                                    <input type="text" disabled class="form-control" value="240000"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <hr class="soften">
+
+                    <a class="btn btn-primary btn-lg" href="#">
+                        View List of All Leads
+                    </a>
+
+                    
+                </div>
+
+                <div class="col-md-6">
+                    <template if:true={offerAI}>
+                        <a class="btn btn-primary btn-lg" href="#" onclick={showAI}>
+                            Try our new AI (BETA)
+                        </a>
+                    </template>
+                    <template if:false={offerAI}>
+                        <my-prediction-inputs></my-prediction-inputs>
+                    </template>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    
+</template>
