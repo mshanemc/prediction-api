@@ -1,4 +1,4 @@
-{
+module.exports = {
     // Default directory for the build output
     buildDir: './dist',
     // Default mode for build command
@@ -16,7 +16,7 @@
     // Default directory for source files
     sourceDir: './src',
     // List of resources for copying to the build folder, like
-    resources: [{ from: "src/resources", to: "dist/resources" }],
+    resources: [{ from: 'src/resources', to: 'dist/resources' }],
     // Default server options for watch command
     devServer: {
         port: 3001,
@@ -42,4 +42,4 @@
             }
         }
     }
-}
+};
